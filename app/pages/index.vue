@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ButtonProps } from '@nuxt/ui'
 
-// Hero links
+// Hero
 const heroLinks = ref<ButtonProps[]>([
   {
     label: 'Découvrir nos services',
@@ -20,43 +20,149 @@ const heroLinks = ref<ButtonProps[]>([
   }
 ])
 
-// Services
-const services = ref([
+// Services par catégorie
+const serviceCategories = ref([
   {
-    title: 'Offensif',
-    description: 'Simulation d\'attaques réelles pour identifier les vulnérabilités et tester la résilience de vos systèmes de sécurité.',
-    icon: 'i-lucide-swords',
-    features: ['Red Team', 'Pentest', 'Audit technique', 'Tests d\'intrusion']
-  },
-  {
-    title: 'Défensif',
-    description: 'Surveillance proactive, détection et réponse aux menaces pour protéger votre infrastructure contre les cyberattaques.',
-    icon: 'i-lucide-shield-check',
-    features: ['SOC managé', 'Réponse à incident', 'Forensic', 'Threat Intelligence']
-  },
-  {
-    title: 'Datascience',
-    description: 'Exploitation avancée des données pour anticiper les menaces et optimiser vos défenses grâce à l\'intelligence artificielle.',
+    label: 'Intelligence Artificielle',
     icon: 'i-lucide-brain-circuit',
-    features: ['Elastic Stack', 'Machine Learning', 'Parsing & SIEM', 'Analyse prédictive']
+    services: [
+      {
+        title: 'Solutions IA sur mesure',
+        description: 'Adaptez les algorithmes IA les plus innovants à vos besoins spécifiques, afin de créer des solutions personnalisées qui dépassent vos attentes. Chaque détail, des interfaces intuitives aux fonctionnalités avant-gardistes, est minutieusement conçu pour vous aider à atteindre le succès.',
+        icon: 'i-lucide-cpu'
+      },
+      {
+        title: 'Formations en IA immersive',
+        description: 'Plongez dans l\'univers de l\'IA avec nos programmes de formation immersifs. Devenez le maître de votre destin numérique en apprenant à utiliser nos solutions avec aisance et confiance. L\'avenir appartient à ceux qui maîtrisent l\'IA, et nous sommes là pour vous y préparer.',
+        icon: 'i-lucide-graduation-cap'
+      },
+      {
+        title: 'Stratégie numérique et IA',
+        description: 'Nos consultants en IA ne se contentent pas de comprendre vos besoins, ils anticipent les tendances futures pour vous offrir une stratégie d\'IA visionnaire. En conjuguant expertise métier et flair technologique, nous façonnons un avenir où votre entreprise excelle.',
+        icon: 'i-lucide-lightbulb'
+      }
+    ]
   },
   {
-    title: 'Consulting',
-    description: 'Accompagnement stratégique et opérationnel pour renforcer votre posture de sécurité et assurer votre conformité.',
-    icon: 'i-lucide-handshake',
-    features: ['Formation', 'Audit organisationnel', 'Conformité (ISO, NIS2)', 'Assistance RSSI']
+    label: 'Cybersécurité',
+    icon: 'i-lucide-shield-check',
+    services: [
+      {
+        title: 'Assistance immédiate en cas de cyberattaque',
+        description: 'Notre équipe d\'intervention d\'urgence (CERT FIDELILIUM) est prête à agir rapidement pour contenir et neutraliser la menace, limitant les dommages et réduisant les temps d\'arrêt. Disponible 24/7 pour protéger vos actifs numériques.',
+        icon: 'i-lucide-siren'
+      },
+      {
+        title: 'PENTEST : tests d\'intrusion',
+        description: 'Évaluez la sécurité de votre système d\'information, réseau ou application web en simulant une attaque par des acteurs malveillants. Notre méthodologie s\'appuie sur les meilleures pratiques OWASP avec des tests en boîte noire, grise et blanche.',
+        icon: 'i-lucide-search-code'
+      },
+      {
+        title: 'Architecture cybersécurisée',
+        description: 'Conception et mise en place d\'architectures de sécurité robustes pour vos systèmes d\'information et industriels. Nous intégrons les principes de défense en profondeur et de Zero Trust pour une protection optimale.',
+        icon: 'i-lucide-network'
+      },
+      {
+        title: 'Cybersécurité managée by FIDELILIUM',
+        description: 'Service de supervision et de protection continue de vos infrastructures. Notre SOC surveille, détecte et répond aux menaces en temps réel pour vous permettre de vous concentrer sur votre cœur de métier.',
+        icon: 'i-lucide-monitor-check'
+      }
+    ]
+  },
+  {
+    label: 'Conseil & Conformité',
+    icon: 'i-lucide-scale',
+    services: [
+      {
+        title: 'Audits organisationnels et techniques',
+        description: 'Au cours de l\'audit, il est procédé au contrôle du niveau de la cybersécurité en observant de manière détaillée l\'adoption ou non des mesures organisationnelles et techniques généralement conseillées.',
+        icon: 'i-lucide-clipboard-check'
+      },
+      {
+        title: 'Conformité',
+        description: 'Mise en conformité et suivi des référentiels réglementaires : NIS 2, ISO 27001, IEC 62 443, PCI-DSS, RGPD. Nous vous accompagnons de l\'évaluation initiale jusqu\'à la certification.',
+        icon: 'i-lucide-file-check'
+      },
+      {
+        title: 'Expertise NIS 2',
+        description: 'Accompagnement dédié à la directive européenne NIS 2. Évaluation de votre exposition, définition de votre feuille de route de conformité et mise en œuvre des mesures techniques et organisationnelles requises.',
+        icon: 'i-lucide-landmark'
+      },
+      {
+        title: 'Sustainable IT',
+        description: 'Intégrez le numérique responsable dans votre stratégie. Nous vous aidons à réduire l\'empreinte environnementale de vos systèmes d\'information tout en maintenant un haut niveau de performance et de sécurité.',
+        icon: 'i-lucide-leaf'
+      }
+    ]
   }
 ])
 
+const activeCategory = ref(0)
+
 // Stats
 const stats = ref([
-  { value: '200+', label: 'Audits réalisés' },
-  { value: '99.9%', label: 'Disponibilité SOC' },
-  { value: '50+', label: 'Clients protégés' },
-  { value: '15+', label: 'Experts certifiés' }
+  { value: '40+', label: 'Années d\'expérience cumulées' },
+  { value: '24/7', label: 'Disponibilité CERT' },
+  { value: 'ANSSI', label: 'Experts certifiés' },
+  { value: '11', label: 'Services spécialisés' }
 ])
 
-// CTA links
+// Actualités
+const actualites = ref([
+  {
+    title: 'FIDELILIUM au cœur de la cybersécurité spatiale européenne',
+    description: 'Nicolas Malbec, CEO de FIDELILIUM, a participé à CYSAT Europe 2025, l\'événement de référence dédié à la cybersécurité appliquée aux systèmes spatiaux.',
+    date: '2025-04-23',
+    badge: 'Événement',
+    icon: 'i-lucide-rocket'
+  },
+  {
+    title: 'Sponsor de Unlock Your Brain – Harden Your System',
+    description: 'FIDELILIUM est fier d\'avoir été sponsor de la 10ème édition de l\'UYBHYS, événement phare de la cybersécurité organisé par La Cantine numérique à Brest.',
+    date: '2025-11-07',
+    badge: 'Sponsoring',
+    icon: 'i-lucide-lock'
+  },
+  {
+    title: 'WINSEARCH et FIDELILIUM unissent leurs forces',
+    description: 'WINSEARCH, cabinet de recrutement du groupe PROMAN, et FIDELILIUM annoncent la signature d\'un partenariat pour renforcer leurs actions commerciales.',
+    date: '2024-12-10',
+    badge: 'Partenariat',
+    icon: 'i-lucide-handshake'
+  },
+  {
+    title: 'Lancement de la 12ème édition du Cybermois',
+    description: 'FIDELILIUM est fier de participer au #Cybermois2024 en tant qu\'acteur #CyberEngagés. Invité au lancement à l\'Assemblée nationale, représenté par Nicolas Malbec et Niels Merceron.',
+    date: '2024-10-01',
+    badge: 'Engagement',
+    icon: 'i-lucide-calendar'
+  },
+  {
+    title: 'Cybersécurité et industrie du futur',
+    description: 'Nicolas Malbec a pris la parole lors d\'un afterwork à Versailles sur le thème de la cybersécurité des systèmes industriels et la réglementation européenne.',
+    date: '2024-09-15',
+    badge: 'Conférence',
+    icon: 'i-lucide-factory'
+  },
+  {
+    title: 'Jeunes IHEDN – Afrique et Cyber',
+    description: 'Nicolas Malbec a assisté à une conférence sur la cybersécurité en Afrique organisée par Les Jeunes IHEDN à l\'ambassade du Gabon.',
+    date: '2024-01-19',
+    badge: 'Conférence',
+    icon: 'i-lucide-globe'
+  }
+])
+
+// Contact form
+const contactForm = reactive({
+  nom: '',
+  email: '',
+  entreprise: '',
+  telephone: '',
+  sujet: '',
+  message: ''
+})
+
 const ctaLinks = ref<ButtonProps[]>([
   {
     label: 'Demander un devis',
@@ -73,15 +179,28 @@ const ctaLinks = ref<ButtonProps[]>([
     trailingIcon: 'i-lucide-arrow-right'
   }
 ])
+
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('fr-FR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
+}
+
+function onSubmit() {
+  // Placeholder for form submission
+  alert('Merci ! Votre message a bien été envoyé. Nous vous répondrons sous 24h.')
+}
 </script>
 
 <template>
   <div>
     <!-- Hero Section -->
     <UPageHero
-      headline="Expert Cybersécurité"
-      title="Protégez votre entreprise avec Fidelilium"
-      description="Nous combinons expertise offensive, défensive et datascience pour sécuriser votre système d'information. De l'audit au SOC managé, nous vous accompagnons à chaque étape."
+      headline="Expert Cybersécurité & IA"
+      title="Vous offrir le meilleur de la transformation numérique, en toute cybersécurité"
+      description="Fondée par deux détenteurs du titre d'expert en sécurité des systèmes d'information de l'ANSSI, FIDELILIUM cumule plus de 40 ans d'expérience dans la défense des systèmes d'information. Préserver la confidentialité, l'intégrité et la disponibilité de vos actifs numériques."
       orientation="horizontal"
       :links="heroLinks"
     >
@@ -91,7 +210,7 @@ const ctaLinks = ref<ButtonProps[]>([
       </div>
     </UPageHero>
 
-    <!-- Stats Section -->
+    <!-- Stats -->
     <UPageSection class="border-default border-y">
       <div class="grid grid-cols-2 gap-8 lg:grid-cols-4">
         <div v-for="stat in stats" :key="stat.label" class="text-center">
@@ -105,76 +224,171 @@ const ctaLinks = ref<ButtonProps[]>([
     <UPageSection
       id="services"
       headline="Nos expertises"
-      title="Des services de cybersécurité complets"
-      description="De la sécurité offensive au consulting, nous couvrons l'ensemble du spectre de la cybersécurité pour protéger votre organisation."
+      title="Des services complets en cybersécurité et intelligence artificielle"
+      description="De la sécurité offensive au consulting, de l'IA sur mesure au numérique responsable, nous couvrons l'ensemble du spectre pour protéger et transformer votre organisation."
     >
-      <UPageGrid>
-        <UPageCard
-          v-for="service in services"
-          :key="service.title"
-          :title="service.title"
-          :description="service.description"
-          :icon="service.icon"
-        >
-          <div class="mt-4 flex flex-wrap gap-2">
-            <UBadge
-              v-for="feature in service.features"
-              :key="feature"
-              :label="feature"
-              color="primary"
-              variant="subtle"
-              size="sm"
-            />
+      <!-- Category Tabs -->
+      <UTabs
+        :items="serviceCategories.map((cat, i) => ({ label: cat.label, icon: cat.icon, value: String(i) }))"
+        :default-value="'0'"
+        class="w-full"
+        @update:model-value="(val: string | number) => activeCategory = Number(val)"
+      >
+        <template #content="{ item }">
+          <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+            <UCard
+              v-for="service in serviceCategories[Number(item?.value)]?.services"
+              :key="service.title"
+              class="h-full"
+            >
+              <div class="flex items-start gap-4">
+                <div class="bg-primary-500/10 flex size-12 shrink-0 items-center justify-center rounded-lg">
+                  <UIcon :name="service.icon" class="text-primary-400 size-6" />
+                </div>
+                <div>
+                  <h3 class="text-highlighted text-lg font-semibold">{{ service.title }}</h3>
+                  <p class="text-muted mt-2 text-sm leading-relaxed">{{ service.description }}</p>
+                </div>
+              </div>
+            </UCard>
           </div>
-        </UPageCard>
-      </UPageGrid>
+        </template>
+      </UTabs>
     </UPageSection>
 
     <!-- Why Us Section -->
     <UPageSection
       id="pourquoi"
-      headline="Pourquoi Fidelilium"
-      title="La confiance au coeur de notre engagement"
-      description="Fidelilium, c'est une équipe d'experts passionnés qui met son savoir-faire au service de la protection de votre entreprise."
+      headline="Pourquoi FIDELILIUM"
+      title="La confiance au cœur de notre engagement"
+      description="Experts en cyberdéfense, souveraineté et transformation numérique, nous mettons notre savoir-faire au service de la protection de votre entreprise."
       :features="[
         {
-          title: 'Expertise certifiée',
-          description: 'Nos consultants sont certifiés OSCP, CISSP, CEH et disposent d\'une expérience terrain reconnue.',
+          title: 'Expertise ANSSI',
+          description: 'Fondée par deux détenteurs du titre d\'expert en sécurité des systèmes d\'information de l\'ANSSI avec plus de 40 ans d\'expérience cumulée.',
           icon: 'i-lucide-award'
         },
         {
-          title: 'Réactivité 24/7',
-          description: 'Notre SOC surveille vos infrastructures en continu et intervient en moins de 15 minutes en cas d\'incident.',
-          icon: 'i-lucide-clock'
+          title: 'CERT FIDELILIUM 24/7',
+          description: 'Notre équipe d\'intervention d\'urgence est disponible 24h/24 et 7j/7 pour contenir et neutraliser rapidement toute cybermenace.',
+          icon: 'i-lucide-siren'
         },
         {
-          title: 'Solutions sur mesure',
-          description: 'Chaque entreprise est unique. Nous adaptons nos prestations à votre contexte, vos risques et votre budget.',
-          icon: 'i-lucide-settings'
+          title: 'Double expertise Cyber & IA',
+          description: 'Une approche unique combinant cybersécurité et intelligence artificielle pour anticiper les menaces et optimiser vos défenses.',
+          icon: 'i-lucide-brain-circuit'
         },
         {
-          title: 'Approche globale',
-          description: 'De l\'audit technique à la conformité réglementaire, nous couvrons tous les aspects de la cybersécurité.',
-          icon: 'i-lucide-globe'
+          title: 'Conformité réglementaire',
+          description: 'Accompagnement complet : NIS 2, ISO 27001, IEC 62 443, PCI-DSS, RGPD. De l\'évaluation initiale à la certification.',
+          icon: 'i-lucide-scale'
         },
         {
-          title: 'Innovation continue',
-          description: 'Nous utilisons les dernières technologies en datascience et IA pour anticiper les menaces émergentes.',
-          icon: 'i-lucide-lightbulb'
+          title: 'Engagement CyberEngagés',
+          description: 'Acteur reconnu de l\'écosystème cyber français, partenaire du Cybermois et sponsor d\'événements majeurs comme UYBHYS et CYSAT.',
+          icon: 'i-lucide-heart-handshake'
         },
         {
-          title: 'Transparence totale',
-          description: 'Rapports détaillés, tableaux de bord en temps réel et communication claire à chaque étape.',
-          icon: 'i-lucide-eye'
+          title: 'Numérique responsable',
+          description: 'Nous intégrons le Sustainable IT dans notre approche pour réduire l\'empreinte environnementale de vos systèmes d\'information.',
+          icon: 'i-lucide-leaf'
         }
       ]"
     />
 
-    <!-- CTA Section -->
-    <UPageCTA
+    <!-- Actualités Section -->
+    <UPageSection
+      id="actualites"
+      headline="Actualités"
+      title="Les dernières nouvelles de FIDELILIUM"
+      description="Conférences, partenariats et engagements : suivez l'actualité de notre équipe au cœur de l'écosystème cybersécurité."
+    >
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <UCard
+          v-for="actu in actualites"
+          :key="actu.title"
+          class="h-full"
+        >
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <UBadge :label="actu.badge" color="primary" variant="subtle" size="sm" />
+              <span class="text-muted text-xs">{{ formatDate(actu.date) }}</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <UIcon :name="actu.icon" class="text-primary-400 mt-1 size-5 shrink-0" />
+              <h3 class="text-highlighted font-semibold leading-tight">{{ actu.title }}</h3>
+            </div>
+            <p class="text-muted text-sm leading-relaxed">{{ actu.description }}</p>
+          </div>
+        </UCard>
+      </div>
+    </UPageSection>
+
+    <!-- Contact Form Section -->
+    <UPageSection
       id="contact"
+      headline="Contact"
+      title="Échangeons sur vos besoins"
+      description="Remplissez le formulaire ci-dessous et nos experts vous répondront sous 24h pour un premier échange gratuit."
+    >
+      <div class="mx-auto max-w-2xl">
+        <UCard>
+          <UForm :state="contactForm" @submit="onSubmit">
+            <div class="flex flex-col gap-4">
+              <div class="grid gap-4 sm:grid-cols-2">
+                <UFormField label="Nom complet" name="nom" required>
+                  <UInput v-model="contactForm.nom" placeholder="Jean Dupont" icon="i-lucide-user" class="w-full" />
+                </UFormField>
+                <UFormField label="Email" name="email" required>
+                  <UInput v-model="contactForm.email" type="email" placeholder="jean@entreprise.fr" icon="i-lucide-mail" class="w-full" />
+                </UFormField>
+              </div>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <UFormField label="Entreprise" name="entreprise">
+                  <UInput v-model="contactForm.entreprise" placeholder="Nom de votre entreprise" icon="i-lucide-building-2" class="w-full" />
+                </UFormField>
+                <UFormField label="Téléphone" name="telephone">
+                  <UInput v-model="contactForm.telephone" type="tel" placeholder="+33 6 00 00 00 00" icon="i-lucide-phone" class="w-full" />
+                </UFormField>
+              </div>
+              <UFormField label="Sujet" name="sujet" required>
+                <USelect
+                  v-model="contactForm.sujet"
+                  placeholder="Sélectionnez un sujet"
+                  :items="[
+                    'Audit de cybersécurité',
+                    'Test d\'intrusion (Pentest)',
+                    'Solutions IA sur mesure',
+                    'Conformité NIS 2 / ISO 27001',
+                    'Cybersécurité managée',
+                    'Formation',
+                    'Assistance urgente (CERT)',
+                    'Autre'
+                  ]"
+                  class="w-full"
+                />
+              </UFormField>
+              <UFormField label="Message" name="message" required>
+                <UTextarea
+                  v-model="contactForm.message"
+                  placeholder="Décrivez votre besoin..."
+                  :rows="5"
+                  class="w-full"
+                />
+              </UFormField>
+              <div class="flex justify-end">
+                <UButton type="submit" label="Envoyer le message" icon="i-lucide-send" size="lg" />
+              </div>
+            </div>
+          </UForm>
+        </UCard>
+      </div>
+    </UPageSection>
+
+    <!-- CTA -->
+    <UPageCTA
       title="Prêt à sécuriser votre entreprise ?"
-      description="Contactez nos experts pour un audit gratuit de votre posture de sécurité. Nous vous répondons sous 24h."
+      description="Contactez nos experts pour un audit gratuit de votre posture de sécurité. Notre équipe vous répond sous 24h."
       variant="subtle"
       :links="ctaLinks"
     />
