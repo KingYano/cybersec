@@ -38,7 +38,7 @@ const serviceCategories = ref([
       },
       {
         title: 'Stratégie numérique et IA',
-        description: 'Nos consultants en IA ne se contentent pas de comprendre vos besoins, ils anticipent les tendances futures pour vous offrir une stratégie d\'IA visionnaire. En conjuguant expertise métier et flair technologique, nous façonnons un avenir où votre entreprise excelle.',
+        description: 'Dans un monde où l\'innovation est la clé de la réussite, l\'IA se positionne comme le catalyseur de la transformation digitale. Nos consultants anticipent les tendances futures pour offrir une stratégie d\'IA visionnaire. Gouvernance numérique renforcée, organisation agile et opérations fluides.',
         icon: 'i-lucide-lightbulb'
       }
     ]
@@ -54,12 +54,12 @@ const serviceCategories = ref([
       },
       {
         title: 'PENTEST : tests d\'intrusion',
-        description: 'Évaluez la sécurité de votre système d\'information, réseau ou application web en simulant une attaque par des acteurs malveillants. Notre méthodologie s\'appuie sur les meilleures pratiques OWASP avec des tests en boîte noire, grise et blanche.',
+        description: 'Évaluez la sécurité de votre système d\'information, réseau ou application web (y compris mobile) en simulant une attaque par des acteurs malveillants. Méthodologie OWASP avec analyse statique et dynamique, en boîte noire, grise et blanche.',
         icon: 'i-lucide-search-code'
       },
       {
-        title: 'Architecture cybersécurisée',
-        description: 'Conception et mise en place d\'architectures de sécurité robustes pour vos systèmes d\'information et industriels. Nous intégrons les principes de défense en profondeur et de Zero Trust pour une protection optimale.',
+        title: 'Sécurisation et durcissement des architectures numériques',
+        description: 'Maximisez la valeur de votre patrimoine numérique grâce à une architecture du système d\'information alignée sur vos objectifs stratégiques. Nous intégrons les principes de défense en profondeur et de Zero Trust pour une protection optimale.',
         icon: 'i-lucide-network'
       },
       {
@@ -90,7 +90,7 @@ const serviceCategories = ref([
       },
       {
         title: 'Sustainable IT',
-        description: 'Intégrez le numérique responsable dans votre stratégie. Nous vous aidons à réduire l\'empreinte environnementale de vos systèmes d\'information tout en maintenant un haut niveau de performance et de sécurité.',
+        description: 'Repensez vos approches technologiques en mettant l\'accent sur la durabilité environnementale et l\'efficacité énergétique. Nous intégrons des pratiques respectueuses de l\'environnement dans la gestion de votre numérique.',
         icon: 'i-lucide-leaf'
       }
     ]
@@ -118,35 +118,56 @@ const actualites = ref([
   },
   {
     title: 'Sponsor de Unlock Your Brain – Harden Your System',
-    description: 'FIDELILIUM est fier d\'avoir été sponsor de la 10ème édition de l\'UYBHYS, événement phare de la cybersécurité organisé par La Cantine numérique à Brest.',
+    description: 'FIDELILIUM est fier d\'avoir été sponsor de la 10ème édition de l\'UYBHYS, événement phare de la cybersécurité organisé par La Cantine numérique à Brest les 7 et 8 novembre.',
     date: '2025-11-07',
     badge: 'Sponsoring',
     icon: 'i-lucide-lock'
   },
   {
+    title: 'Première édition de l\'OpenSSL Conference à Prague',
+    description: 'Du 7 au 9 octobre 2025, Prague a accueilli la toute première édition de l\'OpenSSL Conference, un événement dédié à l\'écosystème OpenSSL, à la cryptographie et à la sécurité des communications. Plus de 400 participants de plus de 30 pays.',
+    date: '2025-10-07',
+    badge: 'Événement',
+    icon: 'i-lucide-key-round'
+  },
+  {
+    title: 'Défense Angels s\'allie à FIDELILIUM',
+    description: 'Défense Angels, réseau de business angels positionné sur les technologies sensibles, annonce un partenariat stratégique avec FIDELILIUM. Au programme : sécurisation des startups deeptech, formation cyber et conformité ISO 27001 / NIS 2.',
+    date: '2025-05-12',
+    badge: 'Partenariat',
+    icon: 'i-lucide-shield-plus'
+  },
+  {
+    title: 'Mastère Cyberdéfense labellisé SecNumedu par l\'ANSSI',
+    description: 'Le Mastère Cyberdéfense de l\'École Hexagone, dirigé par le Commandant Nicolas Malbec, a été labellisé SecNumedu par l\'ANSSI. Partenaires : Stormshield (Airbus), Outscale (Dassault Systèmes), HarfangLab.',
+    date: '2025-03-01',
+    badge: 'Formation',
+    icon: 'i-lucide-graduation-cap'
+  },
+  {
     title: 'WINSEARCH et FIDELILIUM unissent leurs forces',
-    description: 'WINSEARCH, cabinet de recrutement du groupe PROMAN, et FIDELILIUM annoncent la signature d\'un partenariat pour renforcer leurs actions commerciales.',
+    description: 'WINSEARCH, cabinet de recrutement du groupe PROMAN, et FIDELILIUM annoncent la signature d\'un partenariat pour renforcer leurs actions commerciales et répondre aux besoins croissants en recrutement cyber.',
     date: '2024-12-10',
     badge: 'Partenariat',
     icon: 'i-lucide-handshake'
   },
   {
     title: 'Lancement de la 12ème édition du Cybermois',
-    description: 'FIDELILIUM est fier de participer au #Cybermois2024 en tant qu\'acteur #CyberEngagés. Invité au lancement à l\'Assemblée nationale, représenté par Nicolas Malbec et Niels Merceron.',
+    description: 'FIDELILIUM participe au #Cybermois2024 en tant qu\'acteur #CyberEngagés. Invité au lancement à l\'Assemblée nationale, représenté par Nicolas Malbec et Niels Merceron. Tables rondes sur les menaces cyber et la souveraineté numérique.',
     date: '2024-10-01',
     badge: 'Engagement',
     icon: 'i-lucide-calendar'
   },
   {
     title: 'Cybersécurité et industrie du futur',
-    description: 'Nicolas Malbec a pris la parole lors d\'un afterwork à Versailles sur le thème de la cybersécurité des systèmes industriels et la réglementation européenne.',
+    description: 'Nicolas Malbec a pris la parole lors d\'un afterwork chez Coentreprendre78 et l\'École Hexagone à Versailles, aux côtés de Julien Bonneau (Sociacom) et Manoel Bizien (Stormshield), sur la cybersécurité des systèmes industriels.',
     date: '2024-09-15',
     badge: 'Conférence',
     icon: 'i-lucide-factory'
   },
   {
     title: 'Jeunes IHEDN – Afrique et Cyber',
-    description: 'Nicolas Malbec a assisté à une conférence sur la cybersécurité en Afrique organisée par Les Jeunes IHEDN à l\'ambassade du Gabon.',
+    description: 'Nicolas Malbec a assisté à une conférence sur la cybersécurité en Afrique organisée par Les Jeunes IHEDN à l\'ambassade du Gabon, avec Clément Domingo (Hackers Without Border), Didier Simba (CESIA) et Oumar Sow (PwC).',
     date: '2024-01-19',
     badge: 'Conférence',
     icon: 'i-lucide-globe'
@@ -179,6 +200,11 @@ const ctaLinks = ref<ButtonProps[]>([
     trailingIcon: 'i-lucide-arrow-right'
   }
 ])
+
+const showAllActualites = ref(false)
+const displayedActualites = computed(() =>
+  showAllActualites.value ? actualites.value : actualites.value.slice(0, 6)
+)
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString('fr-FR', {
@@ -305,7 +331,7 @@ function onSubmit() {
     >
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <UCard
-          v-for="actu in actualites"
+          v-for="actu in displayedActualites"
           :key="actu.title"
           class="h-full"
         >
@@ -321,6 +347,15 @@ function onSubmit() {
             <p class="text-muted text-sm leading-relaxed">{{ actu.description }}</p>
           </div>
         </UCard>
+      </div>
+      <div v-if="actualites.length > 6" class="mt-8 flex justify-center">
+        <UButton
+          :label="showAllActualites ? 'Voir moins' : `Voir toutes les actualités (${actualites.length})`"
+          variant="outline"
+          color="neutral"
+          :icon="showAllActualites ? 'i-lucide-chevron-up' : 'i-lucide-chevron-down'"
+          @click="showAllActualites = !showAllActualites"
+        />
       </div>
     </UPageSection>
 

@@ -5,33 +5,42 @@ const navigation = ref<NavigationMenuItem[]>([
   { label: 'Accueil', icon: 'i-lucide-home', to: '/' },
   { label: 'Services', icon: 'i-lucide-shield', to: '#services' },
   { label: 'Pourquoi nous', icon: 'i-lucide-award', to: '#pourquoi' },
+  { label: 'Actualités', icon: 'i-lucide-newspaper', to: '#actualites' },
   { label: 'Contact', icon: 'i-lucide-mail', to: '#contact' }
 ])
 
 const footerColumns = ref<FooterColumnsProps['columns']>([
   {
-    label: 'Services',
+    label: 'Intelligence Artificielle',
     children: [
-      { label: 'Offensif', to: '#services' },
-      { label: 'Défensif', to: '#services' },
-      { label: 'Datascience', to: '#services' },
-      { label: 'Consulting', to: '#services' }
+      { label: 'Solutions IA sur mesure', to: '#services' },
+      { label: 'Formations en IA immersive', to: '#services' },
+      { label: 'Stratégie numérique et IA', to: '#services' }
+    ]
+  },
+  {
+    label: 'Cybersécurité',
+    children: [
+      { label: 'CERT FIDELILIUM', to: '#services' },
+      { label: 'Pentest', to: '#services' },
+      { label: 'Cybersécurité managée', to: '#services' },
+      { label: 'Architecture sécurisée', to: '#services' }
+    ]
+  },
+  {
+    label: 'Conseil & Conformité',
+    children: [
+      { label: 'Audits', to: '#services' },
+      { label: 'Conformité NIS 2 / ISO 27001', to: '#services' },
+      { label: 'Sustainable IT', to: '#services' }
     ]
   },
   {
     label: 'Entreprise',
     children: [
       { label: 'À propos', to: '#pourquoi' },
-      { label: 'Contact', to: '#contact' },
-      { label: 'Carrières', to: '#' }
-    ]
-  },
-  {
-    label: 'Ressources',
-    children: [
-      { label: 'Blog', to: '#' },
-      { label: 'Documentation', to: '#' },
-      { label: 'Support', to: '#' }
+      { label: 'Actualités', to: '#actualites' },
+      { label: 'Contact', to: '#contact' }
     ]
   }
 ])
@@ -66,9 +75,7 @@ const footerColumns = ref<FooterColumnsProps['columns']>([
       </template>
 
       <template #right>
-        <UButton icon="i-simple-icons-linkedin" color="neutral" variant="ghost" to="https://linkedin.com" target="_blank" aria-label="LinkedIn" />
-        <UButton icon="i-simple-icons-x" color="neutral" variant="ghost" to="https://x.com" target="_blank" aria-label="X" />
-        <UButton icon="i-simple-icons-github" color="neutral" variant="ghost" to="https://github.com" target="_blank" aria-label="GitHub" />
+        <UButton icon="i-simple-icons-linkedin" color="neutral" variant="ghost" to="https://www.linkedin.com/company/fidelilium" target="_blank" aria-label="LinkedIn" />
       </template>
     </UFooter>
   </UApp>
